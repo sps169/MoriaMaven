@@ -1,6 +1,6 @@
 public class ActionDanger extends Danger{
-	public int arrows;
-	public int enemies;
+	public final int arrows;
+	public final int enemies;
 
 	public ActionDanger (int arrows, int enemies)
 	{

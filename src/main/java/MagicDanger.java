@@ -1,5 +1,5 @@
 public class MagicDanger extends Danger{
-	public int magicPoints;
+	public final int magicPoints;
 
 	public MagicDanger (int magicPoints)
 	{
