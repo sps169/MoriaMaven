@@ -1,16 +1,27 @@
 public class Room
 {
-	public final int number;
-	public final Danger danger;
+	private int number;
+	private Danger danger;
+	private int positiveParameter;
 
-	public Room (int number, DangerType dangerType, int maxMagic, int maxArrows, int maxEnemies)
+	public Room ()
 	{
+
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
 		this.number = number;
-		if (dangerType == DangerType.magic)
-			this.danger = new MagicDanger(maxMagic);
-		else if (dangerType == DangerType.action)
-			this.danger = new ActionDanger(maxArrows, maxEnemies);
-		else
-			this.danger = new AbilityDanger();
+	}
+
+	public Danger getDanger() {
+		return danger;
+	}
+
+	public void setDanger(Danger danger) {
+		this.danger = danger;
 	}
 }

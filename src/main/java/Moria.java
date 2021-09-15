@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 
 public class Moria {
-	public final ArrayList<Room> moria;
+	public final ArrayList<Room> dungeon;
+	public int rooms;
+	public int magicPoints;
+	public int arrows;
+	public int enemies;
 	public static final int NUMBER_ROOMS = 36;
 	public static final int MAX_MAGIC_POINTS = 30;
 	public static final int MAX_ARROWS = 30;
@@ -9,8 +13,7 @@ public class Moria {
 	public static Moria singleton;
 	private Moria ()
 	{
-		this.moria = new ArrayList<>();
-		this.generateMoria();
+		this.dungeon = new ArrayList<>();
 	}
 
 	public static Moria getInstance()
@@ -21,21 +24,45 @@ public class Moria {
 		}
 		return singleton;
 	}
-	private void generateMoria()
-	{
-		for (int i = 0; i < Moria.NUMBER_ROOMS; i++)
-		{
-			this.moria.add(new Room(
-					i + 1, DangerType.values()[(int)(Math.random()*3)], MAX_MAGIC_POINTS, MAX_ARROWS, MAX_ENEMIES));
-		}
+
+	public int getEnemies() {
+		return enemies;
+	}
+
+	public void setEnemies(int enemies) {
+		this.enemies = enemies;
+	}
+
+	public int getArrows() {
+		return arrows;
+	}
+
+	public void setArrows(int arrows) {
+		this.arrows = arrows;
+	}
+
+	public int getMagicPoints() {
+		return magicPoints;
+	}
+
+	public void setMagicPoints(int magicPoints) {
+		this.magicPoints = magicPoints;
+	}
+
+	public int getNumberOfRooms() {
+		return rooms;
+	}
+
+	public void setNumberOfRooms(int rooms) {
+		this.rooms = rooms;
 	}
 
 	public void clearMoria()
 	{
 
-		while (!this.moria.isEmpty())
+		while (!this.dungeon.isEmpty())
 		{
-			this.moria.remove(0);
+			this.dungeon.remove(0);
 		}
 	}
 }

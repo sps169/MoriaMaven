@@ -1,9 +1,17 @@
 public class MagicDanger extends Danger{
-	public final int magicPoints;
+	private int magicPoints;
 
 	public MagicDanger (int magicPoints)
 	{
 		this.dangerType = DangerType.magic;
+		this.magicPoints = magicPoints;
+	}
+
+	public int getMagicPoints() {
+		return this.magicPoints;
+	}
+
+	public void setMagicPoints(int magicPoints) {
 		this.magicPoints = magicPoints;
 	}
 }
