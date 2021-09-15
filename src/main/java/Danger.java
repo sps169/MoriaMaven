@@ -1,6 +1,6 @@
 public abstract class Danger
 {
-	public DangerType dangerType;
+	protected DangerType dangerType;
 
 	public DangerType getDangerType() {
 		return dangerType;
