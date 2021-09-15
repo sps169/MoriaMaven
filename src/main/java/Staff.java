@@ -1,4 +1,4 @@
-public class Staff extends Items{
+public class Staff extends Item {
 private int energy;
 private int maxEnergy;
 

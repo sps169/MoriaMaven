@@ -2,7 +2,6 @@ public class Room
 {
 	private int number;
 	private Danger danger;
-	private int positiveParameter;
 
 	public Room ()
 	{

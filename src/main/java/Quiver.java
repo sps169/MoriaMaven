@@ -1,4 +1,4 @@
-public class Quiver extends Items {
+public class Quiver extends Item {
     private int arrows;
     private int maxArrows;
 
@@ -27,6 +27,7 @@ public class Quiver extends Items {
     public void shootArrow(){
         this.arrows--;
     }
+
     public void rechargeArrows(int newArrows){
         if ((this.arrows + newArrows)>=this.maxArrows){
             this.arrows = this.maxArrows;

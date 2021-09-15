@@ -1,4 +1,4 @@
-public class Ring extends Items{
+public class Ring extends Item {
     private boolean isWeared;
 
     public Ring(String name) {
