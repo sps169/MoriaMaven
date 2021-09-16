@@ -1,9 +1,10 @@
 public class Staff extends Item {
-private int energy;
-private int maxEnergy;
+    private int energy;
+    private int maxEnergy;
+    private final static DangerType staffDangerType = DangerType.magic;
 
     public Staff(String name, int energy, int maxEnergy) {
-        super(name);
+        super(name, staffDangerType);
         this.energy = energy;
         this.maxEnergy = maxEnergy;
     }
@@ -36,6 +37,8 @@ private int maxEnergy;
 
     public String toString()
     {
-        return "Name: " + this.getName() + ", CurrentEnergy: " + this.energy + ", MaxEnergy: " + this.maxEnergy;
+        return "Name: " + this.getName() + ", CurrentEnergy: "
+                + this.energy + ", MaxEnergy: " + this.maxEnergy
+                + ", Danger Type: " + this.getDangerType();
     }
 }

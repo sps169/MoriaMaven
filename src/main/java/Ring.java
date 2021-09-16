@@ -1,8 +1,9 @@
 public class Ring extends Item {
     private boolean isWearing;
+    private final static DangerType ringDangerType = DangerType.ability;
 
     public Ring(String name) {
-        super(name);
+        super(name, ringDangerType);
         this.isWearing = false;
     }
 
@@ -25,6 +26,7 @@ public class Ring extends Item {
     @Override
     public String toString()
     {
-        return "Name: " + this.getName() + " ,Status: " + this.isWearing;
+        return "Name: " + this.getName() + " ,Status: " + this.isWearing
+                + ", Danger Type: " + this.getDangerType();
     }
 }

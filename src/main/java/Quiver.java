@@ -1,9 +1,10 @@
 public class Quiver extends Item {
     private int arrows;
     private int maxArrows;
+    private final static DangerType quiverDangerType = DangerType.action;
 
     public Quiver(String name,int arrows, int maxArrows) {
-        super(name);
+        super(name, quiverDangerType);
         this.arrows = arrows;
         this.maxArrows = maxArrows;
     }
@@ -40,6 +41,8 @@ public class Quiver extends Item {
     @Override
     public String toString()
     {
-        return "Name: " + this.getName() + ", CurrentArrows: " + this.arrows + ", MaxArrows: " + this.maxArrows;
+        return "Name: " + this.getName() + ", CurrentArrows: "
+                + this.arrows + ", MaxArrows: " + this.maxArrows
+                + ", Danger Type: " + this.getDangerType();
     }
 }

@@ -28,9 +28,9 @@ public class Main {
 				.buildCharacter();
 
 		System.out.println("Characters:\n");
-		System.out.println(frodo.toString());
-		System.out.println(gandalf.toString());
-		System.out.println(legolas.toString() + "\n");
+		System.out.println("[ " + frodo.toString() + "]");
+		System.out.println("[" + gandalf.toString() + "]");
+		System.out.println("[" + legolas.toString() + "]\n");
 
 		for(int i = 0; i < moria.dungeon.size(); i++) {
 			Room room = moria.dungeon.get(i);
