@@ -1,24 +1,30 @@
 public class Ring extends Item {
-    private boolean isWeared;
+    private boolean isWearing;
 
     public Ring(String name) {
         super(name);
-        this.isWeared = false;
+        this.isWearing = false;
     }
 
-    public boolean isWeared() {
-        return isWeared;
+    public boolean getIsWearing() {
+        return isWearing;
     }
 
-    public void setWeared(boolean weared) {
-        isWeared = weared;
+    public void setIsWearing(boolean isWearing) {
+        isWearing = isWearing;
     }
 
     public void putOnRing() {
-        this.isWeared = true;
+        this.isWearing = true;
     }
 
     public void takeOffRing() {
-        this.isWeared = false;
+        this.isWearing = false;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Name: " + this.getName() + " ,Status: " + this.isWearing;
     }
 }

@@ -1,7 +1,7 @@
-import java.sql.SQLOutput;
-
 public class Main {
 	public static void main (String[] args){
+		final int maxPartyArrows = 30;
+		final int maxPartyMagic = 30;
 		MoriaBuilder mBuilder = new MoriaBuilder();
 		Moria moria = mBuilder
 				.withMaxArrows(10)
@@ -9,6 +9,28 @@ public class Main {
 				.withMaxMagic(10)
 				.withRooms(36)
 				.buildMoria();
+
+		CharacterBuilder cBuilder = new CharacterBuilder();
+		Character gandalf = cBuilder
+				.withName("Gandalf")
+				.withRace("Mage")
+				.withItem(new Staff("Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
+				.buildCharacter();
+		Character frodo = cBuilder
+				.withName("Frodo")
+				.withRace("Hobbit")
+				.withItem(new Ring("Ring"))
+				.buildCharacter();
+		Character legolas = cBuilder
+				.withName("Legolas")
+				.withRace("Elf")
+				.withItem(new Quiver("Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
+				.buildCharacter();
+
+		System.out.println("Characters:\n");
+		System.out.println(frodo.toString());
+		System.out.println(gandalf.toString());
+		System.out.println(legolas.toString() + "\n");
 
 		for(int i = 0; i < moria.dungeon.size(); i++) {
 			Room room = moria.dungeon.get(i);

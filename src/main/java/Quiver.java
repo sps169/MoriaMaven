@@ -36,4 +36,10 @@ public class Quiver extends Item {
             this.arrows += newArrows;
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return "Name: " + this.getName() + ", CurrentArrows: " + this.arrows + ", MaxArrows: " + this.maxArrows;
+    }
 }

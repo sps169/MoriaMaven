@@ -36,4 +36,11 @@ public class Character {
     public void setItem(Item item) {
         this.item = item;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Name: " + this.name + ", Race: " + this.race + ", Status: "
+                + this.isLive + ", Item: (" + this.item.toString() + ")";
+    }
 }

@@ -31,6 +31,11 @@ private int maxEnergy;
         else {
             this.energy += newEnergy;
         }
-    return this.energy;
+        return this.energy;
+    }
+
+    public String toString()
+    {
+        return "Name: " + this.getName() + ", CurrentEnergy: " + this.energy + ", MaxEnergy: " + this.maxEnergy;
     }
 }
