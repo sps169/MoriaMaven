@@ -17,7 +17,7 @@ public class ResultWriter {
     }
         catch (IOException fileError)
         {
-            System.out.println("Problems founded: " +
+            System.out.println("Problems found: " +
                         fileError.getMessage() );
         }
     }

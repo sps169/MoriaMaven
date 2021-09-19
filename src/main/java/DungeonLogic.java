@@ -12,15 +12,24 @@ public class DungeonLogic {
 
     public static boolean conquerRoom(Character character, Room room)
     {
+
         if (room.getDanger().getDangerType() == character.getItem().getDangerType())
         {
             switch(room.getDanger().getDangerType())
             {
                 case magic:
+                    System.out.print(character.getName() + " fights with " +
+                            ((Staff)character.getItem()).getEnergy() + " PM ");
+                    System.out.println("a " + ((MagicDanger)room.getDanger()).getMagicPoints() + "PM danger.");
                     return magicCombat((Staff)character.getItem(), (MagicDanger)room.getDanger());
                 case action:
+                    System.out.print(character.getName() + " fights with " +
+                            ((Quiver)character.getItem()).getArrows() + " arrows ");
+                    System.out.println(((ActionDanger)room.getDanger()).getEnemies()
+                            + " enemies with " + ((ActionDanger)room.getDanger()).getArrows() + " arrows on the floor.");
                     return actionCombat((Quiver)character.getItem(), (ActionDanger)room.getDanger());
                 case ability:
+                    System.out.println(character.getName() + " fights.");
                     return abilityCombat((Ring)character.getItem());
                 default:
                     System.err.println("Wrong Danger Type");
