@@ -1,14 +1,16 @@
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Run {
     private int conqueredRooms;
     private int fledRooms;
-    private Date runStart;
-    private Date runEnd;
+    private LocalDateTime runStart;
+    private LocalDateTime runEnd;
 
     public void executeRun (Moria moria, Team team)
     {
         boolean fail = false;
+        runStart = LocalDateTime.now();
         for (Room room : moria.dungeon)
         {
             Character challenger = team.getBestDude(room.getDanger());
@@ -33,5 +35,9 @@ public class Run {
             else
                 this.conqueredRooms++;
         }
+        runEnd = LocalDateTime.now();
+        ResultWriter resultWriter =new ResultWriter();
+        if (fail){
+            resultWriter.fileWriter("The heroes failed and die...");}
     }
 }
