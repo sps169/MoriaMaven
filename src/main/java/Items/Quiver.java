@@ -1,3 +1,7 @@
+package Items;
+
+import Dangers.DangerType;
+
 public class Quiver extends Item {
     private int arrows;
     private int maxArrows;
@@ -43,6 +47,6 @@ public class Quiver extends Item {
     {
         return "Name: " + this.getName() + ", CurrentArrows: "
                 + this.arrows + ", MaxArrows: " + this.maxArrows
-                + ", Danger Type: " + this.getDangerType();
+                + ", Dangers.Danger Type: " + this.getDangerType();
     }
 }

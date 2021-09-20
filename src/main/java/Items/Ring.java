@@ -1,3 +1,7 @@
+package Items;
+
+import Dangers.DangerType;
+
 public class Ring extends Item {
     private boolean isWearing;
     private final static DangerType ringDangerType = DangerType.ability;
@@ -27,6 +31,6 @@ public class Ring extends Item {
     public String toString()
     {
         return "Name: " + this.getName() + " ,Status: " + this.isWearing
-                + ", Danger Type: " + this.getDangerType();
+                + ", Dangers.Danger Type: " + this.getDangerType();
     }
 }

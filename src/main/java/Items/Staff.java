@@ -1,3 +1,7 @@
+package Items;
+
+import Dangers.DangerType;
+
 public class Staff extends Item {
     private int energy;
     private int maxEnergy;
@@ -39,6 +43,6 @@ public class Staff extends Item {
     {
         return "Name: " + this.getName() + ", CurrentEnergy: "
                 + this.energy + ", MaxEnergy: " + this.maxEnergy
-                + ", Danger Type: " + this.getDangerType();
+                + ", Dangers.Danger Type: " + this.getDangerType();
     }
 }

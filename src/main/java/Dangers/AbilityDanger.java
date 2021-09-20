@@ -1,3 +1,5 @@
+package Dangers;
+
 public class AbilityDanger extends Danger{
 
 	public AbilityDanger (){

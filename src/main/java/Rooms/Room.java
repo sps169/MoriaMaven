@@ -1,3 +1,7 @@
+package Rooms;
+
+import Dangers.Danger;
+
 public class Room
 {
 	private int number;

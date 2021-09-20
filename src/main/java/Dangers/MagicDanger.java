@@ -1,3 +1,5 @@
+package Dangers;
+
 public class MagicDanger extends Danger{
 	private int magicPoints;
 

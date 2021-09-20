@@ -1,5 +1,11 @@
+import Characters.Character;
+import Characters.Team;
+import Moria.Moria;
+import Moria.DungeonLogic;
+import Output.ResultWriter;
+import Rooms.Room;
+
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Run {
     public static int runNumber = 0;
@@ -25,7 +31,7 @@ public class Run {
         runStart = LocalDateTime.now();
         int i = 0;
         for (Room room = moria.dungeon.get(i); i < moria.getNumberOfRooms();) {
-            System.out.println("Room " + room.getNumber());
+            System.out.println("Rooms.Room " + room.getNumber());
             Character challenger = team.getBestDude(room.getDanger());
             if (challenger != null) {
                 if (!DungeonLogic.conquerRoom(challenger, room)) {

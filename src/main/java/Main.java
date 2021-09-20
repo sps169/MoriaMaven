@@ -1,3 +1,12 @@
+import Characters.Character;
+import Characters.CharacterBuilder;
+import Characters.Team;
+import Items.Quiver;
+import Items.Ring;
+import Items.Staff;
+import Moria.Moria;
+import Moria.MoriaBuilder;
+
 public class Main {
 	public static void main (String[] args){
 		final int maxPartyArrows = 30;
@@ -16,17 +25,17 @@ public class Main {
 			Character gandalf = cBuilder
 					.withName("Gandalf")
 					.withRace("Mage")
-					.withItem(new Staff("Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
+					.withItem(new Staff("Items.Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
 					.buildCharacter();
 			Character frodo = cBuilder
 					.withName("Frodo")
 					.withRace("Hobbit")
-					.withItem(new Ring("Ring"))
+					.withItem(new Ring("Items.Ring"))
 					.buildCharacter();
 			Character legolas = cBuilder
 					.withName("Legolas")
 					.withRace("Elf")
-					.withItem(new Quiver("Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
+					.withItem(new Quiver("Items.Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
 					.buildCharacter();
 			Team teamcomp = new Team();
 			teamcomp.addCharacterToTeam(gandalf);

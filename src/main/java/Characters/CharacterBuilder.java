@@ -1,3 +1,7 @@
+package Characters;
+
+import Items.Item;
+
 public class CharacterBuilder {
     private String name = "Default";
     private String race = "Defect";

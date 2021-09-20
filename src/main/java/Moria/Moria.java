@@ -1,4 +1,7 @@
+package Moria;
+
 import java.util.ArrayList;
+import Rooms.Room;
 
 public class Moria {
 	public final ArrayList<Room> dungeon;
