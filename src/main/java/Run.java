@@ -1,6 +1,11 @@
 import Characters.Character;
+import Characters.CharacterBuilder;
 import Characters.Team;
+import Items.Quiver;
+import Items.Ring;
+import Items.Staff;
 import Moria.Moria;
+import Moria.MoriaBuilder;
 import Moria.DungeonLogic;
 import Output.ResultWriter;
 import Rooms.Room;
@@ -8,6 +13,10 @@ import Rooms.Room;
 import java.time.LocalDateTime;
 
 public class Run {
+    final int maxPartyArrows = 30;
+    final int maxPartyMagic = 30;
+    public Moria moria;
+    public Team team;
     public static int runNumber = 0;
     private int conqueredRooms;
     private int fledRooms;
@@ -17,14 +26,14 @@ public class Run {
 
     public Run ()
     {
-
+        this.generateRunObjects();
     }
 
     public boolean getResult()
     {
         return this.runResult;
     }
-    public void executeRun (Moria moria, Team team)
+    public void executeRun ()
     {
         runNumber++;
         boolean fail = false;
@@ -83,5 +92,39 @@ public class Run {
         rw.fileWriter("Inicio: " + this.runStart.toString());
         rw.fileWriter("Fin: " + this.runEnd.toString());
         rw.fileWriter("");
+    }
+
+    public void generateRunObjects()
+    {
+        MoriaBuilder mBuilder = new MoriaBuilder();
+        Moria moria = mBuilder
+                .withMaxArrows(10)
+                .withMaxEnemies(15)
+                .withMaxMagic(10)
+                .withRooms(36)
+                .buildMoria();
+
+        CharacterBuilder cBuilder = new CharacterBuilder();
+        Character gandalf = cBuilder
+                .withName("Gandalf")
+                .withRace("Mage")
+                .withItem(new Staff("Items.Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
+                .buildCharacter();
+        Character frodo = cBuilder
+                .withName("Frodo")
+                .withRace("Hobbit")
+                .withItem(new Ring("Items.Ring"))
+                .buildCharacter();
+        Character legolas = cBuilder
+                .withName("Legolas")
+                .withRace("Elf")
+                .withItem(new Quiver("Items.Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
+                .buildCharacter();
+        Team teamcomp = new Team();
+        teamcomp.addCharacterToTeam(gandalf);
+        teamcomp.addCharacterToTeam(frodo);
+        teamcomp.addCharacterToTeam(legolas);
+        this.moria = moria;
+        this.team = teamcomp;
     }
 }

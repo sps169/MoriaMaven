@@ -101,9 +101,8 @@ public class DungeonLogic {
             result = true;
         else if  (magicDanger.getMagicPoints() == magicItem.getEnergy())
             result = (Math.random() * 100) <= CHANCES_SAME_PM;
-        else {
+        else
             result = (Math.random() * 100) <= CHANCES_LESS_PM;
-        }
         if (result)
             magicItem.setEnergy(magicItem.getEnergy()-magicDanger.getMagicPoints());
         return result;
