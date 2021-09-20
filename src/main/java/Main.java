@@ -4,7 +4,6 @@ public class Main {
 		final int maxPartyMagic = 30;
 		int i = 0;
 		while(i < 1000) {
-
 			MoriaBuilder mBuilder = new MoriaBuilder();
 			Moria moria = mBuilder
 					.withMaxArrows(10)
@@ -38,24 +37,5 @@ public class Main {
 			runner.printRun();
 			i++;
 		}
-//		ResultWriter resultWriter = new ResultWriter();
-//		resultWriter.fileWriter("Characters:\n");
-//		resultWriter.fileWriter("[ " + frodo.toString() + "]");
-//		resultWriter.fileWriter("[" + gandalf.toString() + "]");
-//		resultWriter.fileWriter("[" + legolas.toString() + "]\n");
-//
-//		for(int i = 0; i < moria.dungeon.size(); i++) {
-//			Room room = moria.dungeon.get(i);
-//			resultWriter.fileWriter(room.getNumber() + ". " + room.getDanger().getDangerType());
-//			switch (room.getDanger().getDangerType()) {
-//				case magic:
-//					resultWriter.fileWriter("Magic Danger: " + ((MagicDanger) room.getDanger()).getMagicPoints());
-//					break;
-//				case action:
-//					resultWriter.fileWriter("Arrows: " + ((ActionDanger) room.getDanger()).getArrows() +
-//							" Enemies: " + ((ActionDanger) room.getDanger()).getEnemies());
-//					break;
-//			}
-//		}
 	}
 }
