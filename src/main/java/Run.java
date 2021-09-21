@@ -40,7 +40,7 @@ public class Run {
         runStart = LocalDateTime.now();
         int i = 0;
         for (Room room = moria.dungeon.get(i); i < moria.getNumberOfRooms();) {
-            System.out.println("Rooms.Room " + room.getNumber());
+            System.out.println("Room " + room.getNumber());
             Character challenger = team.getBestDude(room.getDanger());
             if (challenger != null) {
                 if (!DungeonLogic.conquerRoom(challenger, room)) {
@@ -108,17 +108,17 @@ public class Run {
         Character gandalf = cBuilder
                 .withName("Gandalf")
                 .withRace("Mage")
-                .withItem(new Staff("Items.Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
+                .withItem(new Staff("Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
                 .buildCharacter();
         Character frodo = cBuilder
                 .withName("Frodo")
                 .withRace("Hobbit")
-                .withItem(new Ring("Items.Ring"))
+                .withItem(new Ring("Ring"))
                 .buildCharacter();
         Character legolas = cBuilder
                 .withName("Legolas")
                 .withRace("Elf")
-                .withItem(new Quiver("Items.Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
+                .withItem(new Quiver("Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
                 .buildCharacter();
         Team teamcomp = new Team();
         teamcomp.addCharacterToTeam(gandalf);
