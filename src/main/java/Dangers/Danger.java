@@ -1,3 +1,5 @@
+package Dangers;
+
 public abstract class Danger
 {
 	protected DangerType dangerType;

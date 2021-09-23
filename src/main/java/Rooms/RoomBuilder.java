@@ -1,3 +1,10 @@
+package Rooms;
+
+import Dangers.AbilityDanger;
+import Dangers.ActionDanger;
+import Dangers.Danger;
+import Dangers.MagicDanger;
+
 public class RoomBuilder {
 	private Danger danger;
 	private int number;

@@ -1,41 +1,23 @@
-public class Main {
-	public static void main (String[] args){
-		final int maxPartyArrows = 30;
-		final int maxPartyMagic = 30;
-		int i = 0;
-		while(i < 1000) {
-			MoriaBuilder mBuilder = new MoriaBuilder();
-			Moria moria = mBuilder
-					.withMaxArrows(10)
-					.withMaxEnemies(15)
-					.withMaxMagic(10)
-					.withRooms(36)
-					.buildMoria();
+import Execution.Run;
+import Output.PrintStatistics;
+import Output.Statistics;
 
-			CharacterBuilder cBuilder = new CharacterBuilder();
-			Character gandalf = cBuilder
-					.withName("Gandalf")
-					.withRace("Mage")
-					.withItem(new Staff("Staff", (int)(Math.random()*maxPartyArrows + 1), maxPartyMagic))
-					.buildCharacter();
-			Character frodo = cBuilder
-					.withName("Frodo")
-					.withRace("Hobbit")
-					.withItem(new Ring("Ring"))
-					.buildCharacter();
-			Character legolas = cBuilder
-					.withName("Legolas")
-					.withRace("Elf")
-					.withItem(new Quiver("Quiver", (int)(Math.random()*maxPartyArrows + 1), maxPartyArrows))
-					.buildCharacter();
-			Team teamcomp = new Team();
-			teamcomp.addCharacterToTeam(gandalf);
-			teamcomp.addCharacterToTeam(frodo);
-			teamcomp.addCharacterToTeam(legolas);
+public class Main {
+
+	public static final int HOW_MANY_RUNS = 100000;
+
+	public static void main (String[] args){
+
+		int deadHobbits = 0;
+		Statistics stats = new Statistics();
+		while(deadHobbits < HOW_MANY_RUNS) {
 			Run runner = new Run();
-			runner.executeRun(moria, teamcomp);
+			runner.executeRun();
 			runner.printRun();
-			i++;
+			deadHobbits++;
+			stats.addRunToSample(runner);
 		}
+		stats.generateStatistics();
+		PrintStatistics.printStatistics(stats);
 	}
 }

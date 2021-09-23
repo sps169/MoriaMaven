@@ -1,3 +1,7 @@
+package Characters;
+
+import Dangers.Danger;
+
 import java.util.ArrayList;
 
 public class Team {

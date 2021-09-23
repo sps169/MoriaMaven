@@ -1,3 +1,7 @@
+package Characters;
+
+import Items.Item;
+
 public class Character {
 
     private String name;
@@ -41,6 +45,6 @@ public class Character {
     public String toString()
     {
         return "Name: " + this.name + ", Race: " + this.race + ", Status: "
-                + this.isLive + ", Item: (" + this.item.toString() + ")";
+                + this.isLive + ", Items.Item: (" + this.item.toString() + ")";
     }
 }

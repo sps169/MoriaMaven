@@ -1,3 +1,7 @@
+package Items;
+
+import Dangers.DangerType;
+
 public abstract class Item {
 
 private String name;

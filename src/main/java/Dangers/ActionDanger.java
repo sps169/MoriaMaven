@@ -1,3 +1,5 @@
+package Dangers;
+
 public class ActionDanger extends Danger{
 	private int arrows;
 	private int enemies;

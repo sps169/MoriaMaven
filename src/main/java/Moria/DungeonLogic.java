@@ -1,3 +1,12 @@
+package Moria;
+
+import Characters.Character;
+import Dangers.*;
+import Items.Quiver;
+import Items.Ring;
+import Items.Staff;
+import Rooms.Room;
+
 public class DungeonLogic {
 
     public static final int CHANCES_FLEE = 80;
@@ -34,6 +43,7 @@ public class DungeonLogic {
                     System.out.print(character.getName() + " fights with " +
                             ((Staff)character.getItem()).getEnergy() + " PM ");
                     System.out.println("a " + ((MagicDanger)room.getDanger()).getMagicPoints() + "PM danger.");
+
                     return magicCombat((Staff)character.getItem(), (MagicDanger)room.getDanger(), 30);
                 case action:
                     System.out.print(character.getName() + " fights with " +
@@ -45,7 +55,7 @@ public class DungeonLogic {
                     System.out.println(character.getName() + " fights.");
                     return abilityCombat((Ring)character.getItem());
                 default:
-                    System.err.println("Wrong Danger Type");
+                    System.err.println("Wrong Dangers.Danger Type");
                     return false;
             }
         }
@@ -91,9 +101,8 @@ public class DungeonLogic {
             result = true;
         else if  (magicDanger.getMagicPoints() == magicItem.getEnergy())
             result = (Math.random() * 100) <= CHANCES_SAME_PM;
-        else {
+        else
             result = (Math.random() * 100) <= CHANCES_LESS_PM;
-        }
         if (result)
             magicItem.setEnergy(magicItem.getEnergy()-magicDanger.getMagicPoints());
         return result;
